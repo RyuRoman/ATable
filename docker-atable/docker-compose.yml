@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+
+  website-atable:
+    container_name: website-atable
+    build: ./docker-config
+    restart: always
+    environment:
+        - VIRTUAL_HOST=website-local.atable.io
+    volumes:
+        - ./src/website-atable:/var/www/html
+
+  api-atable:
+    container_name: api-atable
+    build: ./docker-config
+    restart: always
+    environment:
+        - VIRTUAL_HOST=api-local.atable.io
+    volumes:
+        - ./src/api-atable:/var/www/html
+
+  backoffice-atable:
+    container_name: backoffice-atable
+    build: ./docker-config
+    restart: always
+    environment:
+        - VIRTUAL_HOST=backoffice-local.atable.io
+    volumes:
+        - ./src/backoffice-atable:/var/www/html
+
+  nginx-proxy:
+    container_name: nginx-proxy
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  db-atable:
+    container_name: mysql-atable
+    image: mysql:5.6
+    restart: always
+    environment:
+      - "MYSQL_DATABASE=atable"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+      - "3306:3306"

@@ -1,0 +1,16 @@
+{
+    "/js/cart.js": "/js/cart.js",
+    "/js/dish.js": "/js/dish.js",
+    "/js/icons.js": "/js/icons.js",
+    "/js/login.js": "/js/login.js",
+    "/js/logout.js": "/js/logout.js",
+    "/js/main.js": "/js/main.js",
+    "/js/my_current_orders.js": "/js/my_current_orders.js",
+    "/js/my_past_orders.js": "/js/my_past_orders.js",
+    "/js/profil.js": "/js/profil.js",
+    "/js/range.js": "/js/range.js",
+    "/js/redirect.js": "/js/redirect.js",
+    "/js/register.js": "/js/register.js",
+    "/js/shop.js": "/js/shop.js",
+    "/js/single.js": "/js/single.js"
+}
